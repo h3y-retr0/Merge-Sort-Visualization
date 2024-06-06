@@ -1,0 +1,56 @@
+@import '../vendor/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+   background-color: rgb(25, 25, 25);
+   color: rgb(235, 235, 235);
+   font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+   font-size: 2em;
+   font-weight: 600;
+   padding: 4px;
+   text-align: center;
+}
+
+h1 span {
+   font-style: italic;
+   color: rgb(235, 128, 28);
+}
+
+.divider {
+   height: 2px;
+   width: 87%;
+   background-color: rgb(235, 128, 28);
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.array-container {
+   width: 100%;
+   height: auto;
+   margin-top: 40px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;  
+}
+
+.array-element {
+   height: 56px;
+   width: 56px;
+   background-color: rgb(235, 128, 28);
+   color: rgb(235, 235, 235);
+   position: relative;
+   margin-right: 3px;
+}
+
+.array-element p {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 20px;
+   margin: 0;
+}
