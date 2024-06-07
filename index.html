@@ -9,24 +9,38 @@
 </head>
 <body>
    <header>
+      <svg id="openMenu" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 92 92" id="menu"><path fill="rgb(235,235,235)" d="M78 23.5H14c-3.6 0-6.5-2.9-6.5-6.5s2.9-6.5 6.5-6.5h64c3.6 0 6.5 2.9 6.5 6.5s-2.9 6.5-6.5 6.5zM84.5 46c0-3.6-2.9-6.5-6.5-6.5H14c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5h64c3.6 0 6.5-2.9 6.5-6.5zm0 29c0-3.6-2.9-6.5-6.5-6.5H14c-3.6 0-6.5 2.9-6.5 6.5s2.9 6.5 6.5 6.5h64c3.6 0 6.5-2.9 6.5-6.5z"></path></svg>
       <h1>Merge <span>Sort</span> Visualization</h1>
-      <div class="divider"></div>
    </header>
+   <div class="divider"></div>
+   
+   
+   <section id="sideMenu">
+      <div id="menuContainer">
+         <svg id="closeMenu" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24" id="close"><path fill="rgb(235,235,235)" d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg>
+         <h4>Array to sort</h4>
+         <input id="arrayInput" type="text" placeholder="6,2,9,-2,4,3,8,1,0" />
+         <button id="saveBtn">Save</button>
+      </div>
+   </section>
+
 
    <main>
-      <div class="array-container">
-         <div class="array-element"><p>6</p></div>
-         <div class="array-element"><p>2</p></div>
-         <div class="array-element"><p>9</p></div>
-         <div class="array-element"><p>-2</p></div>
-         <div class="array-element"><p>4</p></div>
-         <div class="array-element"><p>3</p></div>
-         <div class="array-element"><p>8</p></div>
-         <div class="array-element"><p>1</p></div>
-         <div class="array-element"><p>0</p></div>
-
+      <div id="array-container">
 
       </div>
    </main>
+
+   <section class="btn-section">
+      <div>
+         <button id="sort-btn">Sort</button>
+         <button id="restart-btn">Restart</button>
+      </div>
+   </section>
+   
+   <script type="text/javascript" src="js/menu.js"></script>
+   <script type="text/javascript" src="js/mergesort.js"></script>
+   <script type="text/javascript" src="js/animation.js"></script>
+
 </body>
 </html>
