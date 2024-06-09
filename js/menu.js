@@ -7,10 +7,18 @@ const saveBtn = document.getElementById('saveBtn')
 const inpt = document.getElementById('arrayInput')
 
 let arrayToSort = [6,2,9,-2,4,3,8,1,0] // Default array
+const arrayContainer = document.querySelector('#array-container')
+
+const centerArray = () => {
+   let screenWidth = window.innerWidth;
+   arrayContainer.style.left = (screenWidth - arrayContainer.offsetWidth) / 2 + 'px';
+
+}
 
 const displayArray = (arr) => {
-   let arrayContainer = document.querySelector('#array-container')
+   
    arrayContainer.innerHTML = ''
+
 
    for (let i = 0; i < arr.length; i++) {
       let square = document.createElement('div')
@@ -21,10 +29,22 @@ const displayArray = (arr) => {
 
       p.innerText = txt
       square.appendChild(p)  
-
+      square.style.left = (i * 51) + 'px';
       arrayContainer.appendChild(square)
    }
+
+
+   const containerWidth = (51 * arr.length)
+
+   arrayContainer.style.width = containerWidth + 'px'
+
+   centerArray()
+
 }
+
+window.addEventListener('resize', centerArray);
+
+// Centrar array
 
 
 

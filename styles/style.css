@@ -7,6 +7,10 @@ body {
    background-color: rgb(25, 25, 25);
    color: rgb(235, 235, 235);
    font-family: "Livvic", "Montserrat", sans-serif;
+   /* display: flex;
+   justify-content: center;
+   align-items: center; */
+
 }
 
 h1 {
@@ -22,6 +26,7 @@ header {
 }
 
 
+
 #openMenu {
    cursor: pointer;
    padding: 0;
@@ -30,7 +35,6 @@ header {
    left: 2%;
    top: 50%;
    transform: translateY(-50%);
-
 }
 
 #closeMenu {
@@ -65,7 +69,6 @@ h1 span {
 }
 
 
-
 #menuContainer {
    margin-top: 31px;
    display: flex;
@@ -82,12 +85,11 @@ h1 span {
 }
 
 #array-container {
-   text-align: center;
-   height: auto;
-   margin-top: 50px;
    position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
+   height: 48px;
+ 
+   margin-top: 50px;
+
    white-space: nowrap;
 }
 
@@ -97,19 +99,17 @@ h1 span {
    width: 48px;
    background-color: rgb(235, 128, 28);
    color: rgb(235, 235, 235);
-   position: relative;
-   margin-right: 3px;
+   margin: 0 1.5px 0 1.5px;
    transition: left 0.7s, top 0.7s;
-   z-index: 2;
+   z-index: 1;
+   position: absolute;
+   text-align: center;
 }
 
 .array-element p {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
    font-size: 20px;
    margin: 0;
+   line-height: 48px;
 
 }
 

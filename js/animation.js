@@ -16,7 +16,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
          clone.style.position = 'absolute';
-         clone.style.backgroundColor = 'red'
          clone.style.zIndex = 1
 
          clone.style.top = `${itemRect.top - containerRect.top}px`;
@@ -61,9 +60,54 @@ window.addEventListener('DOMContentLoaded', () => {
    })
 
    const merge = (arr1, arr2, target) => new Promise((resolve) => {
+      
+      console.log(target)
+      let result = []
+      let i = 0
+      let j = 0
 
-      console.log(arr1, arr2, target)
-      return
+      while (i < arr1.length && j < arr2.length) {
+         if (arr1[i].querySelector('p').textContent < arr2[j].querySelector('p').textContent) {
+            result.push(arr1[i])
+            i++
+         } else {
+            result.push(arr2[j])
+            j++
+         }
+      }
+
+      while (i < arr1.length) {
+         result.push(arr1[i])
+         i++
+      }
+
+      while (j < arr2.length) {
+         result.push(arr2[j])
+         j++
+      }
+
+      result.forEach((el, i) => {
+         let targetElement = target[i]
+         setTimeout(() => {  
+            let newLeft = parseInt(window.getComputedStyle(targetElement).left);
+            let newTop = parseInt(window.getComputedStyle(targetElement).top);
+
+            el.style.left = newLeft + 'px'
+            el.style.top = newTop + 'px'
+            el.style.zIndex = 2
+
+         }, i * 700)
+
+      })
+
+      
+      setTimeout(() => {
+         for (x of target) {
+            x.remove()
+         }
+         resolve(result)
+      }, result.length * 700)
+
    }) 
 
    
@@ -74,14 +118,12 @@ window.addEventListener('DOMContentLoaded', () => {
          return A
       }
 
-      let tst = await split(A)
+      let [left, right, target] = await split(A)
 
-      let sortedLeft = await mergeSortAnimation(tst[0])
-      let sortedRight = await mergeSortAnimation(tst[1])
-      let target = tst[2]
+      let sortedLeft = await mergeSortAnimation(left)
+      let sortedRight = await mergeSortAnimation(right)
+
       return await merge(sortedLeft, sortedRight, target)
-      
-
 
    }
 
