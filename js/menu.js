@@ -29,13 +29,14 @@ const displayArray = (arr) => {
 
 
 openBtn.addEventListener('click', () => {
-sideMenu.style.transform = 'translateX(0)'
-// document.body.style.opacity = '0.3'
+   sideMenu.style.transform = 'translateX(0)'
+
+   // document.body.style.opacity = '0.3'
 
 })
 
 closeBtn.addEventListener('click', () => {
-sideMenu.style.transform = 'translateX(-100%)'
+   sideMenu.style.transform = 'translateX(-100%)'
 
 })
 
