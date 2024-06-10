@@ -17,10 +17,14 @@
    
    <section id="sideMenu">
       <div id="menuContainer">
-         <svg id="closeMenu" xmlns="http://www.w3.org/2000/svg" width="28" height="24" viewBox="0 0 24 24" id="close"><path fill="rgb(235,235,235)" d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg>
+         <svg id="closeMenu" xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 24 24" id="close"><path fill="#5390d9" d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg>
+         <h3>Settings</h3>
+         <div></div>
          <h4>Array to sort</h4>
          <input id="arrayInput" type="text" placeholder="6,2,9,-2,4,3,8,1,0" />
-         <button id="saveBtn">Save</button>
+         <h4>Animation time (ms)</h4>
+         <input id="animationInput" type="number" placeholder="700" />
+         <button id="save-btn">Save</button>
       </div>
    </section>
 
@@ -32,13 +36,15 @@
    <section class="btn-section">
       <div>
          <button id="sort-btn">Sort</button>
-         <button id="restart-btn">Unsort</button>
+         <button id="unsort-btn">Unsort</button>
       </div>
    </section>
    
-   <script type="text/javascript" src="js/menu.js"></script>
    <script type="text/javascript" src="js/mergesort.js"></script>
    <script type="text/javascript" src="js/animation.js"></script>
+   <script type="text/javascript" src="js/main.js"></script>
+   <script type="text/javascript" src="js/menu.js"></script>
+
 
 </body>
 </html>

@@ -1,13 +1,17 @@
 'use strict'
 
+
 const openBtn = document.getElementById('openMenu')
 const closeBtn = document.getElementById('closeMenu')
 const sideMenu = document.getElementById('sideMenu')
-const saveBtn = document.getElementById('saveBtn')
-const inpt = document.getElementById('arrayInput')
+const saveBtn = document.getElementById('save-btn')
+const arrayInput = document.getElementById('arrayInput')
+const animationInput = document.getElementById('animationInput')
+const arrayContainer = document.querySelector('#array-container')
+
 
 let arrayToSort = [6,2,9,-2,4,3,8,1,0] // Default array
-const arrayContainer = document.querySelector('#array-container')
+let animationTime = 700 // Default time
 
 const centerArray = () => {
    let screenWidth = window.innerWidth;
@@ -18,7 +22,7 @@ const centerArray = () => {
 const displayArray = (arr) => {
    
    arrayContainer.innerHTML = ''
-
+   sorted = false
 
    for (let i = 0; i < arr.length; i++) {
       let square = document.createElement('div')
@@ -68,24 +72,29 @@ function validarFormato(valor) {
 
 saveBtn.addEventListener('click', () => {
 
-   let val = inpt.value
+   let val = arrayInput.value
    val = val.replace(/,/g, '')
-   inpt.value = ''
+   arrayInput.value = ''
    arrayToSort.length = 0
 
    // Validate
    
    if (!validarFormato(val)) {
-      console.log("Error")
+      console.error("Error")
       return
    }
 
    for (let j = 0; j < val.length; j++) {
       arrayToSort.push(parseInt(val[j]))
    }
-
+   animationTime = animationInput.value
+   console.log(arrayToSort)
    displayArray(arrayToSort)
-
+   
+   let divs = document.getElementsByClassName('array-element')
+   for (let i = 0; i < divs.length; i++) {
+      divs[i].style.transition = `left ${animationTime}ms, top ${animationTime}ms`
+   }
 })
 
 
